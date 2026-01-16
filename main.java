@@ -6,13 +6,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println("\n--- Calculator ---");
-            System.out.println("1. Add");
-            System.out.println("2. Subtract");
-            System.out.println("3. Multiply");
-            System.out.println("4. Divide");
-            System.out.println("0. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println("\n" +
+                "╔══════════════════════════════╗\n" +
+                "║          Calculator          ║\n" +
+                "╠══════════════════════════════╣\n" +
+                "║  1. Add                      ║\n" +
+                "║  2. Subtract                 ║\n" +
+                "║  3. Multiply                 ║\n" +
+                "║  4. Divide                   ║\n" +
+                "║  0. Exit                     ║\n" +
+                "╚══════════════════════════════╝\n" +
+                "Choose an option: ");
             opcion = sc.nextInt();
             if (opcion >= 1 && opcion <= 4) {
                 System.out.print("Introduce el primer número: ");
