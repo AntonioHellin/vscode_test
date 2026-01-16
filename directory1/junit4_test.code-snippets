@@ -1,0 +1,76 @@
+{
+  "JUnit 4 Test Class": {
+    "prefix": "junit4test",
+    "body": [
+      "import org.junit.Before;",
+      "import org.junit.After;",
+      "import org.junit.Test;",
+      "import static org.junit.Assert.*;",
+      "",
+      "public class ${1:ClassName}Test {",
+      "",
+      "    private ${2:ClassToTest} instance;",
+      "",
+      "    @Before",
+      "    public void setUp() {",
+      "        // Initialize objects before each test",
+      "        instance = new ${2:ClassToTest}(${3:params});",
+      "    }",
+      "",
+      "    @After",
+      "    public void tearDown() {",
+      "        // Clean up after each test",
+      "        instance = null;",
+      "    }",
+      "",
+      "    @Test",
+      "    public void test${4:MethodName}() {",
+      "        // Arrange",
+      "",
+      "        // Act",
+      "        ${5:// action}",
+      "",
+      "        // Assert",
+      "        ${6:// assertion}",
+      "    }",
+      "",
+      "    @Test(expected = ${7:Exception}.class)",
+      "    public void test${8:ExceptionHandling}() {",
+      "        // Test exception handling",
+      "        ${9:// code that throws exception}",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Creates a JUnit 4 test class with setUp, tearDown, and test method examples"
+  },
+  "JUnit 4 Test Method": {
+    "prefix": "junit4method",
+    "body": [
+      "@Test",
+      "public void test${1:MethodName}() {",
+      "    // Arrange",
+      "    ${2:// setup}",
+      "",
+      "    // Act",
+      "    ${3:// action}",
+      "",
+      "    // Assert",
+      "    ${4:// assertion}",
+      "}",
+      ""
+    ],
+    "description": "Creates a single JUnit 4 test method with AAA pattern"
+  },
+  "JUnit 4 Exception Test": {
+    "prefix": "junit4exception",
+    "body": [
+      "@Test(expected = ${1:Exception}.class)",
+      "public void test${2:ExceptionName}() {",
+      "    ${3:// code that should throw exception}",
+      "}",
+      ""
+    ],
+    "description": "Creates a JUnit 4 test method that expects an exception"
+  }
+}

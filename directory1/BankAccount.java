@@ -1,3 +1,7 @@
+/**
+ * Represents a bank account with basic banking operations.
+ * Manages balance, minimum balance validation, and account status.
+ */
 public class BankAccount {
     private String accountNumber;
     private String ownerName;
@@ -5,16 +9,17 @@ public class BankAccount {
     private double minimumBalance; // Minimum valuation
     private boolean isActive; // State: active or inactive
 
-    // Constructor
+    /**
+     * Initializes a bank account.
+     */
     public BankAccount(String accountNumber, String ownerName, double initialBalance, double minimumBalance) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = initialBalance;
         this.minimumBalance = minimumBalance;
-        this.isActive = true; // Default state
+        this.isActive = true;
     }
 
-    // Getters
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -35,7 +40,7 @@ public class BankAccount {
         return isActive;
     }
 
-    // Methods for basic banking operations
+    /** Deposits money if amount is positive. */
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -44,6 +49,7 @@ public class BankAccount {
         }
     }
 
+    /** Withdraws money if sufficient funds and minimum balance maintained. */
     public void withdraw(double amount) {
         if (amount > 0 && balance - amount >= minimumBalance) {
             balance -= amount;
@@ -52,10 +58,12 @@ public class BankAccount {
         }
     }
 
+    /** Closes the account. */
     public void closeAccount() {
         isActive = false;
     }
 
+    /** Reopens the account. */
     public void reopenAccount() {
         isActive = true;
     }
